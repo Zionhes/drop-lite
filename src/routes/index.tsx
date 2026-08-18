@@ -1,9 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-export const Route = createFileRoute("/")({
-  component: RouteComponent,
-})
+import { FileUploadPage } from "@/pages/file-upload/file-upload-page"
 
-function RouteComponent() {
-  return <div>Hello "/"!</div>
-}
+export const Route = createFileRoute("/")({
+  component: FileUploadPage,
+})
