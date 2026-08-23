@@ -1,9 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
-import FileUploader from "@/components/FileUploader"
+
+import { FileUploaderPage } from "@/pages/file-upload/page"
 export const Route = createFileRoute("/")({
-  component: () => (
-    <div>
-      <FileUploader />
-    </div>
-  ),
+  component: FileUploaderPage,
 })
