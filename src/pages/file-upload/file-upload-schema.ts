@@ -3,7 +3,7 @@ import {z} from "zod/v4"
 export const MAX_FILE_COUNT = 5
 export const FILE_INPUT_ACCEPT = ".pdf,.png,.jpg,.jpeg,.webp,.txt"
 
-const MAX_FILE_SIZE = 10 * 1024 * 1024
+export const MAX_FILE_SIZE = 10 * 1024 * 1024
 const ACCEPTED_FILE_TYPES = [
   "application/pdf",
   "image/jpeg",

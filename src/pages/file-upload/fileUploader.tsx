@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react"
 import { useForm } from "@tanstack/react-form"
-import { UploadCloud, X, Trash2, FileText } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { UploadCloud, X, Trash2, FileText, FileCheck } from "lucide-react"
 import {
   Attachment,
   AttachmentContent,
@@ -149,10 +148,13 @@ export default function FileUploader() {
                   <UploadCloud className="mx-auto h-10 w-10 text-muted-foreground" />
                   <p className="text-sm text-muted-foreground">
                     Arrastra y suelta tus archivos aquí, o{" "}
-                    <span className="text-primary underline">examina</span>
+                    <span className="text-primary underline">
+                      Buscar Archivos
+                    </span>
                   </p>
                   <p className="text-xs text-muted-foreground/70">
-                    Máximo {MAX_FILE_COUNT} archivos (PDF, PNG, JPG, WEBP, TXT)
+                    Máximo {MAX_FILE_COUNT} {FILE_INPUT_ACCEPT}
+                    {""}
                     de hasta 10 MB.
                   </p>
                 </div>
@@ -167,14 +169,14 @@ export default function FileUploader() {
 
               {/* Header Contador y Limpieza */}
               {files.length > 0 && (
-                <div className="flex items-center justify-between pt-2">
+                <div className="flex items-center justify-around pt-2">
                   <span className="text-sm font-medium">
                     Archivos cargados:{" "}
                     <strong className="text-primary">
                       {files.length} / {MAX_FILE_COUNT}
                     </strong>
                   </span>
-                  <Button
+                  <AttachmentAction
                     type="button"
                     variant="destructive"
                     size="sm"
@@ -183,9 +185,15 @@ export default function FileUploader() {
                       filesField.setValue([])
                     }}
                   >
-                    <Trash2 className="mr-2 h-4 w-4" />
+                    <Trash2 className="mr-2 size-4" />
                     Eliminar todos
-                  </Button>
+                  </AttachmentAction>
+                  {files.length === 5 && (
+                    <AttachmentAction type="button">
+                      <FileCheck className="mr-2 size-4" />
+                      Subir
+                    </AttachmentAction>
+                  )}
                 </div>
               )}
 
