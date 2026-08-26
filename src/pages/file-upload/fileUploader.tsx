@@ -188,7 +188,7 @@ export default function FileUploader() {
                     <Trash2 className="mr-2 size-4" />
                     Eliminar todos
                   </AttachmentAction>
-                  {files.length === 5 && (
+                  {files.length === MAX_FILE_COUNT && (
                     <AttachmentAction type="button">
                       <FileCheck className="mr-2 size-4" />
                       Subir

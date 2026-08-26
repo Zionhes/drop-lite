@@ -1,4 +1,4 @@
-import FileUploader from "@/pages/file-upload/FileUploader"
+import FileUploader from "@/pages/file-upload/fileUploader"
 
 export function FileUploaderPage() {
   return (
